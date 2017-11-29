@@ -28,7 +28,9 @@ var Todo = mongoose.model('Todo', {
 // });
 
 // var newTodo = new Todo({
-//    text: 'Something to do'
+//    text: 'Something to do',
+//    completed: true,
+//    completedAt: 132
 // });
 
 //save to db
