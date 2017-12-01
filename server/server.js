@@ -30,6 +30,10 @@ app.post('/todos', (req, res) => {
 //SERVER
 app.listen(3000, () =>{
     console.log('Server is running');
-})
+});
+
+
+//non es6
+module.exports = {app:app};
 
 
