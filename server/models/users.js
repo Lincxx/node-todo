@@ -1,3 +1,4 @@
+var mongoose = require('mongoose')
 //mongoose model
 var User = mongoose.model('User', {
     email : {
@@ -7,3 +8,5 @@ var User = mongoose.model('User', {
         minlength: 1
     }
 });
+//Non es6 module.exports = {User: User}
+module.exports = {User}

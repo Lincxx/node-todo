@@ -1,3 +1,4 @@
+var mongoose = require('mongoose')
 //mongoose model
 var Todo = mongoose.model('Todo', {
     text: {
@@ -15,3 +16,6 @@ var Todo = mongoose.model('Todo', {
         default: null
     }
 });
+
+//Non es6 module.exports = {Todo: Todo}
+module.exports = {Todo}
