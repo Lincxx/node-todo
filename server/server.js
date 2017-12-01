@@ -1,26 +1,7 @@
-const mongoose = require('mongoose');
-
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/TodoApp');
+var {mongoose} = require ('./db/mongoose');
 
 
-//mongoose model
-var Todo = mongoose.model('Todo', {
-    text: {
-        type: String, 
-        required: true,
-        minlength: 1,
-        trim: true
-    },
-    completed: {
-        type: Boolean,
-        default: false
-    },
-    completedAt: {
-        type: Number,
-        default: null
-    }
-});
+
 
 //insert data
 // var newTodo = new Todo({
@@ -49,14 +30,7 @@ var Todo = mongoose.model('Todo', {
 //new user model 
 //email - require, trim, string, minlength of 1
 
-var User = mongoose.model('User', {
-    email : {
-        require: true, 
-        trim: true, 
-        type: String, 
-        minlength: 1
-    }
-});
+
 
 var newUser = new User({
     email: '    test@test.com     '
