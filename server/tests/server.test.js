@@ -5,15 +5,21 @@ var request = require('supertest');
 //local
 const {app} = require('./../server');
 const {Todo} = require('./../models/todo');
+const {User} = require('./../models/user');
 
 const todos = [{
     text: 'First test todo'
 }, {
     text: 'Second test todo'
+}];
+
+const user = [{
+    email: 'jeremy@email.com'
 }]
 
 //testing lifecycle method
 beforeEach((done) => {
+    //return User.insertMany(user);
     Todo.remove({}).then(() => {
        return Todo.insertMany(todos);
     }).then(() => done());
