@@ -59,7 +59,7 @@ app.get('/todos/:id', (req, res) => {
 
 //SERVER
 app.listen(port, () =>{
-    console.log(`Started up at post ${port}`);
+    console.log(`Started up at port ${port}`);
 });
 
 
