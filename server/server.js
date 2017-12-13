@@ -56,6 +56,34 @@ app.get('/todos/:id', (req, res) => {
    
 });
 
+//DELETE ROUTE
+app.delete('/todos/:id', ()=>{
+    //get the id 
+    var id = req.params.id;
+
+    //validate the id -> not valid return 404
+    if(!ObjectID.isValid(id)){
+        return res.status(404).send();
+    };
+
+    //remove todo by id
+    Todo.findByIdAndRemove('5a3151a5c112b23834ca058f').then((todo)=> {
+      //success
+        //if no doc, send 404
+        if(!todo){
+            return res.status(404).send();
+        }
+        //if doc, send 200
+        res.send(200);
+
+    }).catch((e)=>{
+         //404 with empty body
+         res.status(404).send();
+    })
+        
+        
+    
+});
 
 //SERVER
 app.listen(port, () =>{
